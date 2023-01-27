@@ -29,7 +29,9 @@ class FourthPage extends StatelessWidget {
                   onPressed: () {
                     //using pushReplacementNamed used to wherever we need to go
                     Navigator.of(context).pushReplacementNamed("/");
-                  },
+               //By using popUntil,it will go back to the home screen
+                   // Navigator.popUntil(context, (route) => route.isFirst);
+                    },
                   child: Text('Back to Home screen')),
             )
           ],

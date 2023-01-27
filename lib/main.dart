@@ -29,6 +29,7 @@ class MyApp extends StatelessWidget {
       },
 
     //This is one way to navigate the screen
+    //Underscore is normally an indication that you are not going to use that parameter inside the block
       // home: const MyHomePage(),
       // routes: {
       //   '/second':(_) =>SecondPage(data: 'Hello')

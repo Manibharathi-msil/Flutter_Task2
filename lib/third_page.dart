@@ -26,6 +26,7 @@ class ThirdPage extends StatelessWidget {
                 child: ElevatedButton(
                     onPressed: () {
                       Navigator.of(context).pushNamed('/fourth',arguments: 'Welcome to fourth page');
+
                       //using push() also we can navigate another screen
                       // Navigator.of(context).push(
                       //   MaterialPageRoute(
@@ -42,7 +43,10 @@ class ThirdPage extends StatelessWidget {
               width: 150,
               child: ElevatedButton(onPressed: (){
                 //using pop we can go to previous screen
+                //at some places where you are uncertain about the screen popping use canPop()
+                if(Navigator.of(context).canPop()){
                   Navigator.pop(context);
+                }
               }, child: Text('Go Back')),
             )
           ],
