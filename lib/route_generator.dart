@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_routes/second_page.dart';
+import 'package:flutter_routes/third_page.dart';
 
+import 'fourth_page.dart';
 import 'main.dart';
 
 class RouteGenerator {
@@ -17,7 +19,22 @@ class RouteGenerator {
             builder: (_) => SecondPage(data: args),
           );
         }
+        return _errorRoute();
+        case '/third':
+        if (args is String) {
+          return MaterialPageRoute(
+            builder: (_) => ThirdPage(data: args),
+          );
+        }
         // if args is not a correct type, return a error page
+        return _errorRoute();
+
+        case '/fourth':
+        if (args is String) {
+          return MaterialPageRoute(
+            builder: (_) => FourthPage(data: args),
+          );
+        }
         return _errorRoute();
       default:
         return _errorRoute();

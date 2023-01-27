@@ -19,6 +19,16 @@ class MyApp extends StatelessWidget {
 
       initialRoute: '/',
       onGenerateRoute: RouteGenerator.generateRoute,
+     //Unknown routes will execute whenever the naviqation get failed
+      onUnknownRoute: (RouteSettings settings) {
+        return MaterialPageRoute<void>(
+          settings: settings,
+          builder: (BuildContext context) =>
+              Scaffold(body: Center(child: Text('Not Found'))),
+        );
+      },
+
+    //This is one way to navigate the screen
       // home: const MyHomePage(),
       // routes: {
       //   '/second':(_) =>SecondPage(data: 'Hello')
@@ -40,14 +50,18 @@ class MyHomePage extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            Text(
-              'First Page',
-              style: TextStyle(fontSize: 30),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                'First Page',
+                style: TextStyle(fontSize: 30),
+              ),
             ),
             ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).pushNamed('/second',arguments: 'Welcome to second page');
-             //using push() also we can navigate another screen
+
+            //using push() also we can navigate another screen
                   // Navigator.of(context).push(
                   //   MaterialPageRoute(
                   //     builder: (context) =>
