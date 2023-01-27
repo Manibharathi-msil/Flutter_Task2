@@ -27,9 +27,10 @@ class FourthPage extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: ElevatedButton(
                   onPressed: () {
+                    //replace the current root
                     //using pushReplacementNamed used to wherever we need to go
                     Navigator.of(context).pushReplacementNamed("/");
-               //By using popUntil,it will go back to the home screen
+               //By using popUntil,remove all the previous routes until it returns true
                    // Navigator.popUntil(context, (route) => route.isFirst);
                     },
                   child: Text('Back to Home screen')),
